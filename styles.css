@@ -14,82 +14,73 @@ body {
   background-color: #fff;
  
 }
-
-
-/* Navbar */
+/* Navbar Layout */
 .navbar {
   width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar .container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem; /* Reduced vertical padding from 2rem to 1.2rem */
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  gap: 2rem;
 }
 
+/* Logo Left */
+.logo-wrapper {
+  flex-shrink: 0;
+}
 
 .logo {
-  width: 9rem;
-  margin-left: 35px;
+  width: 6rem;
+  height: auto;
 }
 
+/* Nav Center */
 .nav-links {
   display: flex;
-  gap: 4rem; /* Adequate spacing between links */
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 2em;
-  text-decoration: none;
-  color: #00233B;
- 
-  display: inline-block;
-  text-align: center;
-    /* max-width: none; */
-  /* width: auto;  */
-}
-
-.contact-button {
-  padding: 1rem 2.5rem;
-  background: linear-gradient(to right, #0072a2, #004466);
-  color: white;
-  text-decoration: none;
-  /* border-radius: 0.4rem; */
-  font-size: 1.5rem;
-}
-
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
+  flex-grow: 1;
   justify-content: center;
+  list-style: none;
+  gap: 4rem;
+}
 
-  width: 190px;             /* Reduced from 127px */
-  height: 50px;             /* Reduced from 60px */
-  /* padding: 4px 10px;         */
-  /* gap: 6px;                  */
-
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 400;
-  font-size: 16px;          /* Reduced from 16px */
-  color: #ffffff;
+.nav-links li a {
+  font-size: 1.6rem;
+  color: #00233B;
   text-decoration: none;
+  text-align: center;
+  line-height: 1.4;
+}
 
-background: linear-gradient(to bottom, #01739C, #00233B);
-  border: none;
-
-  cursor: pointer;
+/* Button Right */
+.contact-btn {
+  background: linear-gradient(to right, #01739C, #00233B);
+  color: #ffffff;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.4rem;
 }
 
 .contact-btn .btn-icon {
-  width: 20px;              /* Slightly smaller */
-  height: 20px;
-  margin-top: 1px;
-  margin-left: -3px;        /* Adjusted for tighter fit */
+  width: 1.8rem;
+  height: 1.8rem;
 }
+.menu-toggle {
+  display: none; /* For desktop by default */
+  background: none;
+  border: none;
+}
+
 .container {
   max-width: 132rem; /* Best fit for 1440px MacBook Pro */
   width: 100%;
@@ -363,7 +354,7 @@ background: linear-gradient(to bottom, #01739C, #00233B);
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .metric {
@@ -789,7 +780,7 @@ background: linear-gradient(to bottom, #01739C, #00233B);
 .blog-cards {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 4rem;
 }
 

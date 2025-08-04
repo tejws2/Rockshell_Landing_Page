@@ -14,31 +14,34 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  
-    <header class="navbar">
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo on the left -->
+    <div class="logo-wrapper">
+      <img src="assets/logo.svg" alt="Rockshell Logo" class="logo" />
+    </div>
 
-      <div class="logo"> 
-        <img src="assets/logo.svg" alt="ROCKSHELL CORP Logo" />
-      </div>
+    <!-- Navigation links in the center -->
+    <ul class="nav-links">
+      <li><a href="#">Heat Pump Solutions</a></li>
+      <li><a href="#">Heat Pump Dryers<br>& Evaporators</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Industries</a></li>
+      <li><a href="#">Insights</a></li>
+    </ul>
 
-    <nav class="nav-links">
-  <div class="back-arrow"></div> <!-- 👈 Add this line -->
-
-  <a href="#">Heat Pump Solutions</a>
-  <a href="#">Heat Pump Dryers & Evaporators</a>
-  <a href="#">Services</a>
-  <a href="#">Industries</a>
-  <a href="#">Insights</a>
-</nav>
-
+    <!-- Right-side: Contact Us button + Hamburger -->
+    <div class="right-controls">
       <a class="contact-btn" href="#">
-       
         Contact Us
-         <img src="assets/log-out.svg" alt="Log out" class="btn-icon" />
+        <img src="assets/log-out.svg" alt="arrow" class="btn-icon" />
       </a>
       <button class="menu-toggle" aria-label="Toggle Menu"></button>
+    </div>
+  </div>
+</nav>
 
-    </header>
+
     <!-- Nav bar responsive Code starts here -->
    <style>
 @media (max-width: 768px) {
@@ -1089,7 +1092,7 @@
 </section>
 <footer class="custom-footer welcome-texts">
   <div class="footer-top">
-    <img src="assets/logo.svg" alt="Logo" class="footer-logo" />
+    <img src="assets/Logo_Png.png" alt="Logo" class="footer-logo" />
 
     <div class="social-icons">
       <img src="assets/linkedin.svg" alt="LinkedIn" />
