@@ -28,7 +28,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 6rem;
 }
 
 /* Logo Left */
@@ -37,7 +37,7 @@ body {
 }
 
 .logo {
-  width: 6rem;
+  width: 9rem;
   height: auto;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .nav-links li a {
-  font-size: 1.6rem;
+  font-size: 20px;
   color: #00233B;
   text-decoration: none;
   text-align: center;
@@ -67,13 +67,13 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  border-radius: 0.4rem;
+  gap: 2.4rem;
+  /* border-radius: 0.4rem; */
 }
 
 .contact-btn .btn-icon {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 .menu-toggle {
   display: none; /* For desktop by default */
@@ -254,45 +254,50 @@ body {
   text-transform: capitalize;
   margin-bottom: 2rem;
 }
-
 .read-more {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   margin-top: 1.6rem;
   font-size: 1.8rem;
   font-weight: 500;
-  color: white;
+  color: #0072CE;
   cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.read-more span {
+  color: inherit;
+  transition: color 0.3s ease;
 }
 
 .read-more img {
   width: 1.8rem;
   height: 1.8rem;
+  transition: filter 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(28%) sepia(98%) saturate(1640%) hue-rotate(185deg) brightness(92%) contrast(101%);
 }
 
-
-.read-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 2.4rem;
-  background: #00233B;
-  color: #fafafa;
-  padding: 1.6rem 2.4rem;
-  text-decoration: none;
-  font-size: 1.8rem;
-  
-  transition: background 0.3s ease;
+.read-more:hover {
+  color: #ffffff;
 }
 
-.read-more-btn:hover {
-  background: #192f36;
+.read-more:hover img {
+  filter: brightness(0) invert(1);
+}
+.industry-box:hover .read-more {
+  color: #ffffff;
 }
 
-.read-more-btn img {
-  width: 1.8rem;
-  height: 1.8rem;
+.industry-box:hover .read-more span {
+  color: #ffffff;
 }
+
+.industry-box:hover .read-more img {
+  filter: brightness(0) invert(1);
+}
+
 .industry-section {
   display: flex;
   flex-wrap: wrap;
@@ -326,7 +331,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  width: 24.4rem;  /* 244px */
+
   height: 6rem;    /* 60px */
   padding: 1.6rem 2.4rem;
   gap: 2.4rem;
@@ -335,25 +340,25 @@ body {
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
-
-  background: linear-gradient(90deg, #00233B 0%, #00233B 100%);
+font-family: 'Fahkwang', sans-serif;
+  background: linear-gradient(90deg, #00233B 0%, #01739C 100%);
   border: none;
  
   cursor: pointer;
 }
 
 .full-width-border {
-  width: 100%;
+  width: 150%;
   border-top: 2px solid #00233B;
   margin: 4rem 0 2rem;
-  opacity: 0.2;
+  
 }
 
 .industry-metrics {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 4rem;
+  /* gap: 4rem; */
   /* flex-wrap: wrap; */
 }
 
@@ -532,6 +537,32 @@ body {
   height: 5.9rem; 
   object-fit: contain;
 } */
+ .clients-logos-scroll-wrapper {
+  overflow: hidden;
+  flex-grow: 1;
+  position: relative;
+}
+
+.clients-logos {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  animation: scroll-left 20s linear infinite;
+}
+
+.clients-logos img {
+ 
+  flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
  .our-clients-section {
   width: 100%;
   background-color: #fff;
@@ -619,7 +650,7 @@ body {
 .contact-btn {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 2.4rem;
    background: linear-gradient(to bottom, #01739C, #00233B);
   color: #ffffff;
   text-decoration: none;
@@ -680,23 +711,24 @@ body {
 }
 
 .cta-btn {
-  background: linear-gradient(90deg, #01739C 0%, #00233B 100%);
-  color: #fff;
-  padding: 1.6rem 2.4rem;
-  font-size: 1.8rem;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 500;
-  display: flex;
-  justify-content: flex-start; 
-  text-decoration: none;
-  
+   display: inline-flex;
   align-items: center;
+  justify-content: center;
+
+
+  height: 6rem;    /* 60px */
+  padding: 1.6rem 2.4rem;
   gap: 2.4rem;
-  height: 6rem;
-  /* width: 25.7rem; */
-  
-  transition: background 0.3s ease;
-  
+
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+font-family: 'Fahkwang', sans-serif;
+  background: linear-gradient(90deg, #00233B 0%, #01739C 100%);
+  border: none;
+ 
+  cursor: pointer;
 }
 .cta-button {
   display: flex;
@@ -708,21 +740,34 @@ body {
   background: linear-gradient(90deg, #00233B 0%, #01739C 100%);
 }
 
+/* Base Layout: Always keep this */
+/* Avoid using width: 100vw — it's causing overflow */
 .portfolio-images-row {
   display: flex;
-  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  /* Remove 100vw, and instead stretch naturally */
+  width: 100%;                 
   margin: 0;
   padding: 0;
+
+  /* Prevent overflow issue */
+  overflow-x: clip;
 }
+
+/* Make all 5 images fit exactly in one row without overflow */
 .portfolio-images-row img {
-  flex: 1 0 20%;
-  /* height: 40rem; */
+  width: 20%;
+  height: auto;                /* Maintain aspect ratio */
   object-fit: cover;
   display: block;
   margin: 0;
   padding: 0;
   border: none;
 }
+
+
 .cta-wrapper {
   display: flex;
   flex-direction: column;
@@ -732,8 +777,8 @@ body {
   gap: 2rem;
 }
 .cta-btn img {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .cta-description {
@@ -749,10 +794,11 @@ body {
 }
 
 
+/* Optional: control max width for readability */
 .blog-section {
-  padding: 6rem 0;
+  width: 100%;
+  overflow-x: clip;
 }
-
 .blog-header h3 {
   font-family: 'Fahkwang', sans-serif;
   font-weight: 600;
@@ -760,6 +806,7 @@ body {
   font-size: 4rem; /* 40px */
   line-height: 100%;
   letter-spacing: 0;
+  padding: 3rem 0rem 0rem 0rem;
   text-transform: capitalize;
   margin-bottom: 2rem;
   color: #00233B;
@@ -780,19 +827,29 @@ body {
 .blog-cards {
   display: flex;
   justify-content: space-between;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   gap: 4rem;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 0rem 0rem 6rem 0rem; /* ⬅️ Adds 6rem padding to top and bottom */
+
+  box-sizing: border-box;
+  overflow-x: clip;
 }
+
 
 .blog-card {
-  width: 40rem; /* 360px */
+  flex: 1 1 calc(33.33% - 2.7rem);  /* auto resize with gap */
+  max-width: 40rem;
+  min-width: 30rem;
+  box-sizing: border-box;
 }
-
 .blog-card img {
-    width: 40rem;   /* increased from 36rem */
-  height: 40rem;  /* increased from 36rem */
+  width: 100%;
+  height: 40rem;
   object-fit: cover;
- 
+  display: block;
 }
 
 .blog-description {
