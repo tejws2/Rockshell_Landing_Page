@@ -352,6 +352,53 @@ document.addEventListener("DOMContentLoaded", function () {
   object-fit: cover;
 }
 
+body{
+  overflow: hidden;
+}
+</style>
+<style>
+  @media (max-width: 768px) {
+  .container {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .breadcrumb {
+    position: static; /* remove absolute on small screens */
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .section-heading {
+    margin-top: 0;
+    font-size: 2.2rem; /* ~22px */
+    line-height: 2.6rem; /* ~26px */
+    width: 32.5rem; /* matches width: 225 */
+  }
+
+  .heat-pump-row {
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    justify-content: space-between;
+  }
+
+  .heat-pump-card {
+    flex: 1 1 calc(50% - 0.8rem); /* two per row with spacing */
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4; /* keeps height proportional */
+  }
+
+  .heat-pump-card img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .heat-pump-card p {
+    font-size: 1.4rem;
+    padding: 0.8rem;
+  }
+}
 
 </style>
 <!-- Here Starts the Heatpump 4 images  Section  -->
@@ -399,7 +446,7 @@ document.addEventListener("DOMContentLoaded", function () {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding-left: 100px;
+  /* padding-left: 100px; */
   position: relative;
   box-sizing: border-box;
 }
@@ -407,7 +454,7 @@ document.addEventListener("DOMContentLoaded", function () {
 .breadcrumb {
   position: absolute;
   top: -60px;
-  left: 100px;
+  /* left: 100px; */
   font-family: 'Work Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -902,7 +949,7 @@ hr {
 <!-- Here Starts the Footer section  -->
 <footer class="custom-footer welcome-texts">
   <div class="footer-top">
-    <img src="assets/Logo_Png.png" alt="Logo" class="footer-logo" />
+    <img src="assets/Logo.svg.svg" alt="Logo" class="footer-logo" />
 
     <div class="social-icons">
       <img src="assets/linkedin.svg" alt="LinkedIn" />
@@ -1052,6 +1099,321 @@ hr {
   }
 }
 
+</style>
+<style>
+ @media (max-width: 768px) {
+  .high-temp-content {
+    flex-direction: column;
+    gap: 4rem;
+    /* padding-top: 4rem; */
+    /* padding-left: 1.6rem;
+    padding-right: 1.6rem; */
+  }
+
+  .high-temp-text h3 {
+    font-size: 2.4rem; /* 24px */
+    margin-bottom: 1.6rem;
+  }
+
+  .high-temp-text p {
+    font-size: 1.4rem; /* 14px */
+    line-height: 1.4;
+    max-width: 100%;
+  }
+
+  .high-temp-image img {
+    width: 100%;
+    /* height: auto;
+    max-width: 100%; */
+  }
+
+    .breadcrumb {
+        display: flex;
+        font-size: 10px !important;
+        flex-wrap: nowrap;
+        gap: 0.4rem;
+        /* padding-left: 1.6rem; */
+        /* padding-right: 1.6rem; */
+        width: 100%;
+        overflow-x: auto;
+    }
+
+
+  .breadcrumb-text {
+    font-size: 1.2rem;
+  }
+
+  .full-width-divider {
+    width: 100%;
+  }
+
+  .container {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heat-pump-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+    padding: 0 1.6rem;
+  }
+
+  .heat-pump-card {
+    flex: 1 1 calc(50% - 1rem); /* 2 cards per row */
+    max-width: calc(50% - 1rem);
+    height: 20rem;
+  }
+
+  .heat-pump-card p {
+    font-size: 1.4rem;
+    padding: 0.8rem 0.4rem;
+  }
+
+  .section-heading {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    width: 100%;
+    padding: 0 1.6rem;
+    margin-top: 4rem;
+    text-align: left;
+  }
+
+  .heat-pump-card img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media (max-width: 420px) {
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+  }
+
+  .cta-text {
+    font-size: 1.2rem;
+  }
+
+  .contact-btn {
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    gap: 0.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .contact-cta {
+    height: 5.4rem; /* 54px */
+    padding: 0 1.6rem;
+  }
+
+  .contact-container {
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cta-text {
+    font-family: 'Fahkwang', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;  /* 12px */
+    line-height: 1;     /* 100% */
+    text-transform: capitalize;
+    width: 15.1rem;     /* 151px */
+    height: 3.2rem;     /* 32px */
+    margin: 0;
+    color: #fff;
+  }
+
+  .contact-btns {
+    width: 17.3rem;       /* 173px */
+    height: 3rem;         /* 30px */
+    font-size: 1.2rem;    /* 12px */
+    padding: 0.8rem;
+    gap: 0.4rem;          /* 4px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .contact-btns img {
+    width: 1.6rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.4rem; /* 54px */
+    padding: 0 1.6rem;
+  }
+
+  .cta-text {
+    width: auto;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    flex: 1; /* allows text to grow naturally */
+  }
+
+  .contact-btn {
+    width: auto;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+.contact-cta {
+  width: 100%;
+  background-color: #00233B; /* navy blue */
+  height: 5.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .contact-btn img {
+    width: 1.2rem;
+    height: auto;
+  }
+}@media (max-width: 768px) {
+  .why-choose-us {
+    padding: 4rem 0;
+  }
+
+  .why-choose-us h3 {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .why-choose-us .reasons {
+    padding-left: 1.6rem;
+  }
+
+  .why-choose-us .reasons li {
+    font-size: 1.6rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 3rem 1.6rem; /* 16px horizontal */
+  }
+
+  .faq-heading {
+    font-size: 2rem;        /* ~20px */
+    line-height: 2.6rem;    /* Adjusted for heading height ~52px */
+    width: 100%;            /* Fits within 303px layout */
+    max-width: 30.3rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .faq-item {
+    width: 100%;
+    max-width: 35.8rem;     /* 358px */
+    margin-bottom: 2.4rem;
+  }
+
+  .faq-question h4 {
+    font-size: 1rem;        /* 10px */
+    font-weight: 400;
+    line-height: 1.4rem;
+    width: 90%;
+  }
+
+  .dropdown-icon {
+    width: 1.2rem;          /* 12px */
+    height: 1.2rem;
+  }
+
+  .faq-answer {
+    font-size: 0.8rem;      /* 8px */
+    line-height: 1.2rem;
+    margin-top: 0.8rem;
+    width: 100%;
+    max-width: 35.8rem;     /* match layout width */
+  }
+
+  hr {
+    display: none;
+  }
+  .high-temp-pump {
+  padding: 0px;
+  background-color: #fff;
+}
+.heat-pump-section{
+  padding-bottom: 60px;
+}
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .help-cta {
+    padding: 3rem 1.6rem;
+  }
+
+  .help-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .help-heading {
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 1.6rem;
+  }
+
+  .help-boxes {
+    display: flex;
+    flex-direction: row; /* boxes in row */
+    justify-content: flex-end; /* align boxes to right */
+    gap: 1.6rem;
+    width: 100%;
+  }
+
+  .help-box {
+    width: 17.5rem; /* 175px */
+    height: 6.4rem;  /* 64px */
+    padding: 0.8rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .help-title {
+    font-size: 1.2rem;
+    gap: 0.8rem;
+  }
+
+  .help-title img {
+    width: 1.6rem;
+    height: auto;
+  }
+
+  .help-box p {
+    width: 14rem;       /* 140px */
+    height: 1.8rem;      /* 18px */
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;   /* 8px */
+    line-height: 1;      /* 100% */
+    margin: 0;
+  }
+}
 </style>
  </div>
 
