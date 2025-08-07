@@ -14,108 +14,103 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
- 
-    <header class="navbar">
+  <!-- Here Starts the Navbar Section  -->
+<nav class="navbar">
+  <div class="container">
+    <!-- Logo on the left -->
+    <div class="logo-wrapper">
+      <a href="index.html"><img src="assets/logo.svg" alt="Rockshell Logo" class="logo" /></a>
+    </div>
 
-      <div class="logo"> 
-        <img src="assets/logo.svg" alt="ROCKSHELL CORP Logo" />
-      </div>
+    <!-- Navigation links in the center -->
+    <ul class="nav-links">
+       <div class="back-arrow">
+    <img src="assets/arrow-left.svg" alt="Back" />
+  </div>
+      <li><a href="#">Heat Pump Solutions</a></li>
+      <li><a href="#">Heat Pump Dryers<br>& Evaporators</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Industries</a></li>
+      <li><a href="#">Insights</a></li>
+    </ul>
 
-    <nav class="nav-links">
-  <div class="back-arrow"></div> <!-- 👈 Add this line -->
-
-  <a href="#">Heat Pump Solutions</a>
-  <a href="#">Heat Pump Dryers & Evaporators</a>
-  <a href="#">Services</a>
-  <a href="#">Industries</a>
-  <a href="#">Insights</a>
-</nav>
-
+    <!-- Right-side: Contact Us button + Hamburger -->
+    <div class="right-controls">
       <a class="contact-btn" href="#">
-       
         Contact Us
-         <img src="assets/log-out.svg" alt="Log out" class="btn-icon" />
+        <img src="assets/log-out.svg" alt="arrow" class="btn-icon" />
       </a>
       <button class="menu-toggle" aria-label="Toggle Menu"></button>
+    </div>
+  </div>
+</nav>
 
-    </header>
+
     <!-- Nav bar responsive Code starts here -->
    <style>
-      html, body {
-  overflow-x: hidden;
-}
-
-* {
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
- 
- .nav-links {
+    .back-arrow {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #fff;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-family: 'Fahkwang', sans-serif;
-  padding: 0;
-  z-index: 999;
-}
-.back-arrow {
-  background: url('/assets/arrow-left.svg') no-repeat center;
-  background-size: 2.4rem 2.4rem;
-  width: 4rem;
-  height: 4rem;
-  margin: 2rem;
-  cursor: pointer;
-} arrow at top */
-.nav-links::before {
-  content: '';
-  background: url('/assets/arrow-left.svg') no-repeat center;
-  background-size: 2.4rem 2.4rem;
-  width: 4rem;
-  height: 4rem;
-  margin: 2rem;
-  cursor: pointer;
-  font-family: 'Fahkwang', sans-serif;
 }
 
-/* Fullscreen visible */
-.nav-links.active {
-  display: flex;
+@media (max-width: 768px) {
+  .navbar {
+   
+  }.back-arrow {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1001;
+  cursor: pointer;
+  display: block; /* Only visible on mobile */
 }
 
-/* Links: no gaps, full-width */
-.nav-links a {
+.back-arrow img {
+  width: 2.4rem;
+  height: auto;
+}
+
+  .navbar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+.logo {
+    width: 5rem;     /* or smaller like 6rem */
+    height: auto;
+  }
+ 
+  .logo img {
+    width: 100%;      /* scales image to fit container */
+    height: auto;     /* maintains aspect ratio */
+    display: block;
+  }
+  .right-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    height: auto;
+    white-space: nowrap;
+  }
+.nav-links li a {
+  display: block;
   width: 100%;
-  padding: 0;                 /* Remove extra padding */
-  margin: 0;                  /* Remove margin */
-  /* font-size: 1.6rem; */
+  text-align: center;
+  padding: 1.6rem 2rem;
+  font-size: 1.6rem;
   color: #00233B;
   text-decoration: none;
-  border-bottom: 1px solid #eee;
-  line-height: 6rem;        /* Optional: controls link height */
-  box-sizing: border-box;
+ 
 }
 
-/* First link (header bar style) */
-.nav-links a.active-link {
-  background: linear-gradient(to right, #01739C, #00233B) !important;
-  color: white !important;
-  font-weight: 600;
-  border: none;
-  outline: none;
-}
-.nav-links a:focus,
-.nav-links a:active {
-  background: none;
-  color: inherit;
-  outline: none;
-}
+  .contact-btn .btn-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
 
   .menu-toggle {
     display: block;
@@ -125,71 +120,100 @@
     height: 3.2rem;
     border: none;
     cursor: pointer;
-    margin-left: -5rem;
+  }
+ .nav-links {
+    display: none; /* 👈 hide by default */
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
   }
 
-    .contact-btn {
-    width: 11rem;          /* 110px */
-    height: 3rem;          /* 30px */
-    padding: 0.8rem 1.2rem; /* 8px top/bottom, 12px left/right */
-    font-size: 1rem;
-    gap: 0.8rem;            /* 8px spacing between icon and text */
+  .nav-links.active {
+    display: flex;
   }
-
-  .contact-btn .btn-icon {
-    width: 1.6rem;         /* Adjust icon size if needed */
-    height: 1.6rem;
-    margin: 0;
-  }
-
-  .logo img {
-    height: 3.5rem;
-  }
-
-  .navbar {
-    padding: 1.2rem 2rem;
-  }
+.nav-links li a.active {
+  background: linear-gradient(180deg, #00233B 0%, #004266 100%);
+  color: #fff;
+  font-weight: 600;
 }
 
+  .nav-links a {
+    /* padding: 0 2rem; */
+    line-height: 5rem;
+
+    font-size: 1.4rem;
+  }
+
+.nav-links.is-closing {
+  display: none !important;
+}
+
+}
    </style>
+   <script>
+  const navLinks = document.querySelectorAll('.nav-links li a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active')); // Remove previous
+      link.classList.add('active'); // Add to clicked
+    });
+  });
+ 
+
+</script>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const navItems = navLinks.querySelectorAll('a');
-    const backArrow = document.querySelector('.back-arrow');
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = navLinks.querySelectorAll('a');
+  const backArrow = document.querySelector('.back-arrow');
 
-    // ✅ Toggle mobile menu visibility
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+  // 🟢 Toggle nav visibility on menu icon click
+  menuToggle.addEventListener('click', () => {
+    const isActive = navLinks.classList.contains('active');
+
+    if (isActive) {
+      navLinks.classList.remove('active');
+      navLinks.classList.add('is-closing');
+    } else {
+      navLinks.classList.remove('is-closing');
+      navLinks.classList.add('active');
+    }
+  });
+
+  // 🟢 Highlight active nav link
+  navItems.forEach(link => {
+    link.addEventListener('click', function () {
+      navItems.forEach(item => item.classList.remove('active-link'));
+      this.classList.add('active-link');
     });
+  });
 
-    // ✅ Highlight active nav link
-    navItems.forEach(link => {
-      link.addEventListener('click', function () {
-        navItems.forEach(item => item.classList.remove('active-link'));
-        this.classList.add('active-link');
-      });
-    });
+  // 🟢 Back arrow: hide menu and go back
+  if (backArrow) {
+    backArrow.addEventListener('click', function () {
+      navLinks.classList.remove('active');
+      navLinks.classList.add('is-closing');
 
-    // ✅ Handle back arrow click
-    if (backArrow) {
-      backArrow.addEventListener('click', function () {
-        // Close the menu (optional, can remove this line if not needed)
-        navLinks.classList.remove('active');
-
-        // Navigate back or fallback to landing page
+      setTimeout(() => {
         if (window.history.length > 1) {
           history.back();
         } else {
-          window.location.href = '/'; // Change if landing page is not at "/"
+          window.location.href = '/';
         }
-      });
-    }
-  });
+      }, 50);
+    });
+  }
+});
 </script>
-
-<!-- Nav bar responsive Code Ends here -->
+<!-- Here Ends the Ends the Navbar  Section  -->
 <section class="high-temp-pump">
   <div class="container">
   <div class="breadcrumb">
@@ -228,8 +252,6 @@
 
 
 <style>
-
-
     .breadcrumb-text a {
   color: inherit;
   text-decoration: none;
@@ -332,7 +354,6 @@
 
 
 </style>
-
 <!-- Here Starts the Heatpump 4 images  Section  -->
 <section class="heat-pump-section">
   <div class="container">
@@ -378,7 +399,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  /* padding-left: 100px; */
+  padding-left: 100px;
   position: relative;
   box-sizing: border-box;
 }
@@ -386,7 +407,7 @@
 .breadcrumb {
   position: absolute;
   top: -60px;
-  /* left: 100px; */
+  left: 100px;
   font-family: 'Work Sans', sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -531,51 +552,6 @@
     gap: 0.6rem;
   }
 }
-@media (max-width: 768px) {
-  .contact-cta {
-    height: 5.4rem; /* 54px */
-    padding: 0 1.6rem;
-  }
-
-  .contact-container {
-    padding: 0;
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .cta-text {
-    font-family: 'Fahkwang', sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;  /* 12px */
-    line-height: 1;     /* 100% */
-    text-transform: capitalize;
-    width: 15.1rem;     /* 151px */
-    height: 3.2rem;     /* 32px */
-    margin: 0;
-    color: #fff;
-  }
-
-  .contact-btns {
-    width: 17.3rem;       /* 173px */
-    height: 3rem;         /* 30px */
-    font-size: 1.2rem;    /* 12px */
-    padding: 0.8rem;
-    gap: 0.4rem;          /* 4px */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-  }
-
-  .contact-btns img {
-    width: 1.6rem;
-    height: auto;
-  }
-}
 
 @media (max-width: 420px) {
   .contact-container {
@@ -618,33 +594,21 @@
 
 </style>
 <!-- Here ends the CTA1 Section  -->
-<!-- Here ends the CTA1 Section  -->
 <section class="why-choose-us">
-  <div class="containers">
-    <h3>Why Choose Us?</h3>
-    <ul class="reasons">
-      <li>Custom-Engineered Solutions: Products designed to match your exact industry requirements.</li>
-      <li>Unmatched Quality Standards: Strict quality control ensuring durability and performance.</li>
-      <li>Advanced Manufacturing Technology: Cutting-edge processes for precision and efficiency.</li>
-      <li>On-Time Delivery Assurance: Reliable logistics for seamless and timely supply.</li>
-      <li>Expert Technical Support: End-to-end assistance from consultation to after-sales service.</li>
-    </ul>
-  </div>
+    <div class="container">
+  <h3>Why Choose Us?</h3>
+  <ul class="reasons">
+    <li>Custom-Engineered Solutions: Products designed to match your exact industry requirements.</li>
+    <li>Unmatched Quality Standards: Strict quality control ensuring durability and performance.</li>
+    <li>Advanced Manufacturing Technology: Cutting-edge processes for precision and efficiency.</li>
+    <li>On-Time Delivery Assurance: Reliable logistics for seamless and timely supply.</li>
+    <li>Expert Technical Support: End-to-end assistance from consultation to after-sales service.</li>
+  </ul></div>
 </section>
 
 <style>
-/* Containers Utility Class */
-.containers {
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
-  margin: 0 auto;
-  max-width: 1440px;
-  box-sizing: border-box;
-}
-
-/* Base Styles */
 .why-choose-us {
-  padding: 6rem 0;
+  padding: 60px 0px;
   background-color: #fff;
   color: #00233B;
 }
@@ -653,53 +617,30 @@
   font-family: 'Fahkwang', sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 4rem;
+  font-size: 40px;
   line-height: 100%;
-    padding-left: 4rem;
   text-transform: capitalize;
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
 .why-choose-us .reasons {
   list-style-type: disc;
-  padding-left: 6rem;
+  padding-left: 20px;
   max-width: 768px;
 }
 
 .why-choose-us .reasons li {
   font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  font-size: 2.4rem;
+  font-style: normal;
+  font-size: 24px;
   line-height: 1.4;
-  margin-bottom: 4rem;
+  letter-spacing: 0;
+  margin-bottom: 40px;
   color: #00233B;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .why-choose-us {
-    padding: 4rem 0;
-  }
-
-  .why-choose-us h3 {
-    font-size: 2.4rem;
-    margin-bottom: 2.4rem;
-    margin-left: -40px;
-  }
-
-  .why-choose-us .reasons {
-    padding-left: 1.6rem;
-  }
-
-  .why-choose-us .reasons li {
-    font-size: 1.6rem;
-    margin-bottom: 2.4rem;
-  }
-}
 </style>
-
-<!-- Here Starts the CTA Section  -->
-
 <!-- Here Starts the CTA Section  -->
 <section class="help-cta">
   <div class="help-container">
@@ -797,62 +738,36 @@
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-  .help-cta {
-    padding: 3rem 1.6rem;
-  }
-
   .help-container {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-    gap: 2rem;
+    gap: 3rem;
+    padding: 0 1.6rem;
   }
 
   .help-heading {
-    font-size: 2rem;
-    text-align: left;
-    margin-bottom: 1.6rem;
+    font-size: 3rem;
+    text-align: center;
   }
 
   .help-boxes {
-    display: flex;
-    flex-direction: row; /* boxes in row */
-    justify-content: flex-end; /* align boxes to right */
-    gap: 1.6rem;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
   }
 
   .help-box {
-    width: 17.5rem; /* 175px */
-    height: 6.4rem;  /* 64px */
-    padding: 0.8rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .help-title {
-    font-size: 1.2rem;
-    gap: 0.8rem;
-  }
-
-  .help-title img {
-    width: 1.6rem;
+    width: 100%;
+    max-width: 36rem;
     height: auto;
   }
 
+  .help-title {
+    font-size: 2rem;
+  }
+
   .help-box p {
-    width: 14rem;       /* 140px */
-    height: 1.8rem;      /* 18px */
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 0.8rem;   /* 8px */
-    line-height: 1;      /* 100% */
-    margin: 0;
+    font-size: 1.4rem;
   }
 }
-
 
 </style>
 
@@ -860,6 +775,7 @@
 
 <!-- Here starts the FAQ Section -->
 <section class="faq-section">
+    <div class="container">
   <h3 class="faq-heading">Frequently Asked Questions</h3>
 
   <div class="faq-item">
@@ -905,12 +821,11 @@
     </div>
     <hr />
   </div>
+  </div>
 </section>
 <style>
- 
-
   .faq-section {
-  padding: 6rem 10rem;
+  padding-top: 80px;
   background-color: #ffffff;
 }
 
@@ -964,52 +879,6 @@ hr {
   border-top: 1px solid #dcdcdc;
   margin-top: 2rem;
 }
-@media (max-width: 768px) {
-  .faq-section {
-    padding: 3rem 1.6rem; /* 16px horizontal */
-  }
-
-  .faq-heading {
-    font-size: 2rem;        /* ~20px */
-    line-height: 2.6rem;    /* Adjusted for heading height ~52px */
-    width: 100%;            /* Fits within 303px layout */
-    max-width: 30.3rem;
-    margin-bottom: 2.4rem;
-  }
-
-  .faq-item {
-    width: 100%;
-    max-width: 35.8rem;     /* 358px */
-    margin-bottom: 2.4rem;
-  }
-
-  .faq-question h4 {
-    font-size: 1rem;        /* 10px */
-    font-weight: 400;
-    line-height: 1.4rem;
-    width: 90%;
-  }
-
-  .dropdown-icon {
-    width: 1.2rem;          /* 12px */
-    height: 1.2rem;
-  }
-
-  .faq-answer {
-    font-size: 0.8rem;      /* 8px */
-    line-height: 1.2rem;
-    margin-top: 0.8rem;
-    width: 100%;
-    max-width: 35.8rem;     /* match layout width */
-  }
-
-  hr {
-    width: 100%;
-    max-width: 35.8rem;
-    margin-top: 1.6rem;
-    border-top: 1px solid #dcdcdc;
-  }
-}
 
 </style>
 <script>
@@ -1033,7 +902,7 @@ hr {
 <!-- Here Starts the Footer section  -->
 <footer class="custom-footer welcome-texts">
   <div class="footer-top">
-    <img src="assets/newlogo.svg" alt="Logo" class="footer-logo" />
+    <img src="assets/Logo_Png.png" alt="Logo" class="footer-logo" />
 
     <div class="social-icons">
       <img src="assets/linkedin.svg" alt="LinkedIn" />
@@ -1180,117 +1049,6 @@ hr {
     font-size: 1rem;
     color: #00233B;
     text-decoration: none;
-  }
-}
-
-</style>
-<style>
-
-  @media (max-width: 768px) {
-  .high-temp-content {
-    flex-direction: column;
-    gap:2rem ;
-    padding-top: 4rem;
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-  }
-
-  .high-temp-text h3 {
-    font-size: 20px  ;/* 24px */
-    margin-bottom: 1.6rem;
-    padding-top: 20px;
-  }
-
-  .high-temp-text p {
-    font-size: 14px ;/* 14px */
-    line-height: 1.4;
-    max-width: 100%;
-  }
-  .high-temp-image {
-    margin-left: -1.6rem;
-    margin-right: -1.6rem;
-    width: calc(100% + 3.2rem);
-  }
-.high-temp-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-.breadcrumb-text a {
-    color: inherit;
-    text-decoration: none;
-    opacity: 0.6;
-    font-size: 10px;
-}
- .breadcrumb {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    white-space: nowrap;
-     /* Adjusted for spacing between breadcrumb items */
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
-    max-width: 100vw;
-    box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;         /* Firefox */
-    -ms-overflow-style: none;      /* IE */
-  }
-  .breadcrumb-text {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-    font-size: 1rem; /* 10px from your Figma spec */
-    line-height: 1;
-    white-space: nowrap;
-    flex-shrink: 0; /* Prevent shrinking */
-  }
-  .full-width-divider {
-    width: 100%;
-  } .breadcrumb::-webkit-scrollbar {
-    display: none; /* Hide scrollbar on Chrome/Safari */
-  }
-
-  .container {
-    padding-left: 0rem;
-    padding-right: 0rem;
-  }
-  .high-temp-pump {
-    padding-top: 60px;
-    background-color: #fff;
-}
-}
-@media (max-width: 768px) {
-  .heat-pump-row {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 4rem;
-    padding: 0 1.6rem;
-  }
-
-  .heat-pump-card {
-    flex: 1 1 calc(50% - 1rem); /* 2 cards per row */
-    max-width: calc(50% - 1rem);
-    height: 20rem;
-  }
-
-  .heat-pump-card p {
-    font-size: 1.4rem;
-    padding: 0.8rem 0.4rem;
-  }
-
-  .section-heading {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    width: 100%;
-    padding: 0 1.6rem;
-    margin-top: -8rem;
-    text-align: left;
-  }
-
-  .heat-pump-card img {
-    height: 100%;
-    object-fit: cover;
   }
 }
 
