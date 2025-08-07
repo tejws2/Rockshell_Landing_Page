@@ -94,6 +94,108 @@ background: linear-gradient(to bottom, #01739C, #00233B);
   margin-top: 1px;
   margin-left: -3px;        /* Adjusted for tighter fit */
 }
+@media (max-width: 768px) {
+ 
+ .nav-links {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: 'Fahkwang', sans-serif;
+  padding: 0;
+  z-index: 999;
+}
+.back-arrow {
+  background: url('/assets/arrow-left.svg') no-repeat center;
+  background-size: 2.4rem 2.4rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 2rem;
+  cursor: pointer;
+} arrow at top */
+.nav-links::before {
+  content: '';
+  background: url('/assets/arrow-left.svg') no-repeat center;
+  background-size: 2.4rem 2.4rem;
+  width: 4rem;
+  height: 4rem;
+  margin: 2rem;
+  cursor: pointer;
+  font-family: 'Fahkwang', sans-serif;
+}
+
+/* Fullscreen visible */
+.nav-links.active {
+  display: flex;
+}
+
+/* Links: no gaps, full-width */
+.nav-links a {
+  width: 100%;
+  padding: 0;                 /* Remove extra padding */
+  margin: 0;                  /* Remove margin */
+  /* font-size: 1.6rem; */
+  color: #00233B;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  line-height: 6rem;        /* Optional: controls link height */
+  box-sizing: border-box;
+}
+
+/* First link (header bar style) */
+.nav-links a.active-link {
+  background: linear-gradient(to right, #01739C, #00233B) !important;
+  color: white !important;
+  font-weight: 600;
+  border: none;
+  outline: none;
+}
+.nav-links a:focus,
+.nav-links a:active {
+  background: none;
+  color: inherit;
+  outline: none;
+}
+
+  .menu-toggle {
+    display: block;
+    background: url('assets/Menu.svg') no-repeat center;
+    background-size: 2.4rem 2.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border: none;
+    cursor: pointer;
+    margin-left: -5rem;
+  }
+
+    .contact-btn {
+    width: 11rem;          /* 110px */
+    height: 3rem;          /* 30px */
+    padding: 0.8rem 1.2rem; /* 8px top/bottom, 12px left/right */
+    font-size: 1rem;
+    gap: 0.8rem;            /* 8px spacing between icon and text */
+  }
+
+  .contact-btn .btn-icon {
+    width: 1.6rem;         /* Adjust icon size if needed */
+    height: 1.6rem;
+    margin: 0;
+  }
+
+  .logo img {
+    height: 3.5rem;
+  }
+
+  .navbar {
+    padding: 1.2rem 2rem;
+  }
+}
 
 .hero-section {
   display: flex;
